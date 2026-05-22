@@ -121,10 +121,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
 /* ── MNEMONICS ── */
 .mnemonic{background:linear-gradient(135deg,var(--goldb),#fff9e6);border:2px solid #d4a017;border-radius:var(--rad);padding:20px;margin-bottom:16px}
 .mnemonic h3{color:var(--gold);font-size:1rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.mnemonic-word{display:flex;gap:0;flex-wrap:wrap;margin:10px 0}
-.mnemonic-letter{display:flex;flex-direction:column;align-items:center;margin:4px;min-width:44px}
+.mnemonic-word{display:flex;gap:0;flex-wrap:wrap;margin:10px 0;align-items:flex-start}
+.mnemonic-letter{display:flex;flex-direction:column;align-items:center;margin:4px 6px;min-width:70px}
 .ml-letter{width:44px;height:44px;border-radius:8px;background:var(--or);color:#fff;font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif}
-.ml-word{font-size:.72rem;color:var(--muted);margin-top:4px;text-align:center;max-width:60px;line-height:1.2}
+.ml-word{font-size:.72rem;color:var(--muted);margin-top:4px;text-align:center;max-width:80px;line-height:1.3;word-break:break-word;overflow-wrap:break-word}
 .mnemonic-tip{font-size:.84rem;color:var(--txt);margin-top:8px;line-height:1.6;padding:10px;background:rgba(255,255,255,.7);border-radius:8px}
 
 /* ── RHYTHM STRIPS ── */
@@ -196,6 +196,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
 .ps-ftr{padding:0 1.4rem 1.1rem;text-align:center}
 .ps-skb{background:transparent;border:none;color:#bbb;font-size:12px;cursor:pointer;padding:4px 8px;font-family:inherit}
 .ps-skb:hover{color:#888}
+
+.drug-layman{font-style:italic;color:var(--muted);font-size:.84em;line-height:1.5;background:rgba(0,0,0,.018)}
 </style>
 </head>
 <body>
@@ -1597,13 +1599,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
           <div class="mnemonic-letter"><div class="ml-letter">H</div><div class="ml-word">Hypovolemia</div></div>
           <div class="mnemonic-letter"><div class="ml-letter">H</div><div class="ml-word">Hypoxia</div></div>
           <div class="mnemonic-letter"><div class="ml-letter">H</div><div class="ml-word">H+ (acidosis)</div></div>
-          <div class="mnemonic-letter"><div class="ml-letter">H</div><div class="ml-word">Hypo/Hyperkalemia</div></div>
+          <div class="mnemonic-letter"><div class="ml-letter">H</div><div class="ml-word">Hypo / Hyperkalemia</div></div>
           <div class="mnemonic-letter"><div class="ml-letter">H</div><div class="ml-word">Hypothermia</div></div>
         </div>
       </div>
       <div>
         <div class="mnemonic-word">
-          <div class="mnemonic-letter"><div class="ml-letter">T</div><div class="ml-word">Tension pneumo</div></div>
+          <div class="mnemonic-letter"><div class="ml-letter">T</div><div class="ml-word">Tension Pneumo</div></div>
           <div class="mnemonic-letter"><div class="ml-letter">T</div><div class="ml-word">Tamponade</div></div>
           <div class="mnemonic-letter"><div class="ml-letter">T</div><div class="ml-word">Toxins</div></div>
           <div class="mnemonic-letter"><div class="ml-letter">T</div><div class="ml-word">Thrombosis PE</div></div>
@@ -1672,11 +1674,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
     <h3 style="color:var(--or);font-size:1.1rem;margin-bottom:12px">🕊️ Module 1 — Palliative Care Drugs</h3>
     <div style="overflow-x:auto">
     <table class="drug-table">
-      <thead><tr><th>Drug</th><th>Mechanism</th><th>Used For</th><th>Adverse Effects</th><th>Antidote/Reversal</th><th>💡 Pearl</th></tr></thead>
+      <thead><tr><th>Drug</th><th>Mechanism</th><th style="min-width:155px">&#x1F5E3;&#xFE0F; In Plain English</th><th>Used For</th><th>Adverse Effects</th><th>Antidote/Reversal</th><th>💡 Pearl</th></tr></thead>
       <tbody>
         <tr>
           <td><strong>Morphine / Opioids</strong></td>
           <td>Mu-opioid receptor agonist → ↓pain signal transmission, ↓dyspnea</td>
+          <td class="drug-layman">Blocks pain signals in the brain — like turning down the volume on pain. Also eases the feeling of breathlessness at end of life.</td>
           <td>Palliative pain, dyspnea in terminal illness</td>
           <td>Respiratory depression, constipation, nausea, sedation, urinary retention</td>
           <td>Naloxone (Narcan) — use cautiously in palliative; reverses analgesia too</td>
@@ -1685,6 +1688,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Varenicline (Chantix)</strong></td>
           <td>Partial nicotinic receptor agonist → reduces cravings + blocks nicotine reward</td>
+          <td class="drug-layman">Tricks the brain into thinking it got nicotine, cutting cravings and making smoking less satisfying — helps people quit with less withdrawal.</td>
           <td>Smoking cessation (especially COPD patients)</td>
           <td>Nausea (most common), neuropsychiatric symptoms, mood changes, suicidal ideation, alcohol interaction</td>
           <td>No specific antidote</td>
@@ -1693,6 +1697,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Acetazolamide</strong></td>
           <td>Carbonic anhydrase inhibitor → blocks HCO3 reabsorption → kidneys excrete bicarbonate</td>
+          <td class="drug-layman">Makes the kidneys dump extra bicarbonate into the urine — used to fix blood that is too alkaline, or reduce pressure inside the brain and eyes.</td>
           <td>Metabolic alkalosis in HF patients who cannot tolerate large NS volumes</td>
           <td>Metabolic acidosis if overdosed, hypokalemia, sulfonamide allergy risk, renal calculi</td>
           <td>No specific antidote</td>
@@ -1705,11 +1710,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
     <h3 style="color:var(--or);font-size:1.1rem;margin:24px 0 12px">⚡ Module 2 — Cardiac ACLS Drugs</h3>
     <div style="overflow-x:auto">
     <table class="drug-table">
-      <thead><tr><th>Drug</th><th>Mechanism</th><th>Used For</th><th>Adverse Effects</th><th>Antidote/Reversal</th><th>💡 Pearl</th></tr></thead>
+      <thead><tr><th>Drug</th><th>Mechanism</th><th style="min-width:155px">&#x1F5E3;&#xFE0F; In Plain English</th><th>Used For</th><th>Adverse Effects</th><th>Antidote/Reversal</th><th>💡 Pearl</th></tr></thead>
       <tbody>
         <tr>
           <td><strong>Atropine</strong><br>0.5 mg IV</td>
           <td>Blocks vagal (parasympathetic) tone at SA &amp; AV nodes → ↑HR</td>
+          <td class="drug-layman">Blocks the nerve signal that slows the heart down — used to speed up a dangerously slow heart rate by releasing the brake.</td>
           <td>Symptomatic bradycardia (1st line), symptomatic 1st/2nd degree AV block</td>
           <td>Tachycardia, dry mouth, urinary retention, blurred vision, confusion in elderly</td>
           <td>No specific antidote. Physostigmine for severe toxicity</td>
@@ -1718,6 +1724,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Adenosine</strong><br>6 mg IV (then 12 mg)</td>
           <td>Transiently blocks AV node conduction — interrupts SVT re-entry circuit</td>
+          <td class="drug-layman">Briefly stops the heart for a split second to reset an abnormally fast rhythm — like a hard reboot for a heart running too fast.</td>
           <td>SVT (first-line after vagal maneuvers fail)</td>
           <td>Transient asystole, chest tightness, flushing, dyspnea, bronchospasm</td>
           <td>Half-life 6–10 sec — self-limiting</td>
@@ -1726,6 +1733,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Amiodarone</strong><br>300 mg IV (VFib)</td>
           <td>Class III antiarrhythmic — prolongs action potential &amp; refractory period. Also Class I, II, IV properties</td>
+          <td class="drug-layman">A powerful rhythm-stabilizing drug — slows and steadies chaotic electrical signals in the heart. Used for life-threatening arrhythmias.</td>
           <td>VFib/pulseless VT (after 3rd shock), refractory arrhythmias, stable VT</td>
           <td class="hl">Pulmonary toxicity, thyroid dysfunction (hypo/hyper), hepatotoxicity, photosensitivity, QT prolongation, blue-gray skin, corneal deposits</td>
           <td>No specific antidote. Monitor and discontinue</td>
@@ -1734,6 +1742,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Epinephrine</strong><br>1 mg IV q3–5 min</td>
           <td>Alpha-1: vasoconstriction → ↑coronary perfusion. Beta-1: ↑HR &amp; contractility</td>
+          <td class="drug-layman">Adrenaline — jumpstarts the heart during cardiac arrest by stimulating the heart to beat and narrowing blood vessels to maintain pressure.</td>
           <td>VFib, pulseless VT, asystole, PEA (cardiac arrest)</td>
           <td>Hypertension, tachycardia, tissue ischemia if extravasated</td>
           <td>Phentolamine for extravasation</td>
@@ -1742,6 +1751,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Digoxin</strong></td>
           <td>Inhibits Na-K ATPase → ↑intracellular Ca²⁺ → ↑contractility. Slows AV conduction via vagal effect</td>
+          <td class="drug-layman">Slows the heart rate and makes each beat stronger — like giving a tired heart a firmer, steadier squeeze at a controlled pace.</td>
           <td>Rate control in AFib, HF with reduced EF</td>
           <td class="hl">Narrow therapeutic index! Toxicity: nausea, vomiting, yellow-green vision, halos around lights, bradyarrhythmias</td>
           <td>DigiFab (digoxin-specific antibody fragments) for severe toxicity</td>
@@ -1750,6 +1760,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Metoprolol / Beta-blockers</strong></td>
           <td>Beta-1 blockade → ↓HR, ↓conduction, ↓contractility</td>
+          <td class="drug-layman">Puts the brakes on the heart — slows it down, cuts its workload, and lowers blood pressure. Like dialing a racing engine back to idle.</td>
           <td>Rate control in AFib/flutter, hypertension, HFrEF, post-MI</td>
           <td>Bradycardia, hypotension, bronchospasm (avoid in asthma), fatigue, masks hypoglycemia signs</td>
           <td>Glucagon for overdose</td>
@@ -1758,6 +1769,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Diltiazem / CCBs</strong></td>
           <td>Calcium channel blockade → vasodilation + ↓SA/AV node activity → ↓HR, ↓BP</td>
+          <td class="drug-layman">Relaxes blood vessels and slows the heart by blocking calcium from entering heart and vessel cells — like loosening a tight grip on a hose.</td>
           <td>Rate control in AFib/SVT, hypertension, angina</td>
           <td>Hypotension, bradycardia, peripheral edema, constipation</td>
           <td>Calcium gluconate IV for CCB overdose</td>
@@ -1766,6 +1778,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Warfarin</strong></td>
           <td>Vitamin K antagonist → inhibits clotting factors II, VII, IX, X</td>
+          <td class="drug-layman">Thins the blood by blocking Vitamin K, which the body needs to form clots — helps prevent strokes and dangerous clots from forming.</td>
           <td>AFib stroke prevention, DVT/PE treatment, mechanical heart valves</td>
           <td>Bleeding (major &amp; minor), hair loss, purple toe syndrome</td>
           <td>Vitamin K (slow), FFP (fast), 4-factor PCC (fastest)</td>
@@ -1774,6 +1787,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Furosemide (Lasix)</strong></td>
           <td>Loop diuretic — blocks Na-K-2Cl transporter → massive salt &amp; water excretion</td>
+          <td class="drug-layman">A powerful water pill — makes the kidneys flush out extra fluid and salt through urine very quickly. Used when fluid is backing up into the lungs or body.</td>
           <td>Heart failure (pulmonary edema), hypertension, edema, hypercalcemia</td>
           <td class="hl">Hypokalemia (→ metabolic alkalosis, U waves, PVCs), hyponatremia, hypomagnesemia, ototoxicity, dehydration</td>
           <td>Potassium replacement; no specific antidote</td>
@@ -1782,6 +1796,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Mannitol</strong></td>
           <td>Osmotic diuretic — ↑serum osmolality → draws fluid from brain cells into vascular space</td>
+          <td class="drug-layman">Pulls excess fluid out of brain tissue into the bloodstream — like a sponge drawing water away from a swollen brain to relieve dangerous pressure.</td>
           <td>Elevated ICP, acute glaucoma</td>
           <td>Electrolyte imbalance, pulmonary edema (if renal failure), rebound cerebral edema</td>
           <td>No specific antidote</td>
@@ -1794,11 +1809,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
     <h3 style="color:var(--or);font-size:1.1rem;margin:24px 0 12px">💉 Module 3 — IV Therapy Drugs</h3>
     <div style="overflow-x:auto">
     <table class="drug-table">
-      <thead><tr><th>Drug</th><th>Mechanism</th><th>Used For</th><th>Adverse Effects</th><th>Antidote/Reversal</th><th>💡 Pearl</th></tr></thead>
+      <thead><tr><th>Drug</th><th>Mechanism</th><th style="min-width:155px">&#x1F5E3;&#xFE0F; In Plain English</th><th>Used For</th><th>Adverse Effects</th><th>Antidote/Reversal</th><th>💡 Pearl</th></tr></thead>
       <tbody>
         <tr>
           <td><strong>Dopamine</strong><br><span class="badge-pill bp-red">⚠️ VESICANT</span></td>
           <td>Dose-dependent: Low = renal vasodilation. Mid = beta-1 (↑HR). High = alpha-1 (vasoconstriction, ↑BP)</td>
+          <td class="drug-layman">Stimulates the heart to beat stronger and faster, and narrows blood vessels to raise blood pressure — used when someone is in shock.</td>
           <td>Cardiogenic shock, septic shock, hemodynamic instability</td>
           <td>Tachyarrhythmias, tissue necrosis if extravasated, hypertension</td>
           <td class="hl">Phentolamine for extravasation</td>
@@ -1807,6 +1823,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Norepinephrine (Levophed)</strong><br><span class="badge-pill bp-red">⚠️ VESICANT</span></td>
           <td>Potent alpha-1 &amp; beta-1 agonist → intense vasoconstriction + ↑cardiac contractility</td>
+          <td class="drug-layman">Powerfully tightens blood vessels to raise dangerously low blood pressure in shock — like squeezing a hose to force pressure up.</td>
           <td>Septic shock (first-line vasopressor), severe hypotension</td>
           <td>Tissue ischemia, severe HTN, reflex bradycardia, necrosis if extravasated</td>
           <td class="hl">Phentolamine for extravasation</td>
@@ -1815,6 +1832,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>KCl (Potassium Chloride)</strong><br><span class="badge-pill bp-red">🔴 HIGH ALERT</span></td>
           <td>Replenishes potassium → restores Na-K ATPase function → corrects hypokalemia</td>
+          <td class="drug-layman">Replaces potassium lost from the body — critical for normal heart rhythm. Given slowly because too much too fast stops the heart.</td>
           <td>Hypokalemia (K+ &lt;3.5 mEq/L)</td>
           <td class="hl">IV PUSH = CARDIAC ARREST. Phlebitis, burning at site, hyperkalemia if over-replaced</td>
           <td>Calcium gluconate IV for hyperkalemia (membrane stabilization)</td>
@@ -1823,6 +1841,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Vancomycin</strong></td>
           <td>Glycopeptide antibiotic — inhibits Gram-positive bacterial cell wall synthesis</td>
+          <td class="drug-layman">A strong antibiotic for resistant infections (like MRSA) — kills bacteria by breaking down their outer protective wall when normal antibiotics fail.</td>
           <td>MRSA, C. diff, serious Gram-positive infections</td>
           <td>Red Man Syndrome (rate-related), nephrotoxicity, ototoxicity, thrombophlebitis</td>
           <td>Diphenhydramine for Red Man Syndrome. No antidote for nephrotoxicity.</td>
@@ -1831,6 +1850,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Phentolamine</strong></td>
           <td>Alpha-adrenergic BLOCKER → reverses catecholamine-induced vasoconstriction → restores tissue perfusion</td>
+          <td class="drug-layman">Blocks the signal that causes blood vessels to clamp shut — used when a vasoconstricting IV drug leaks out of the vein to restore blood flow before tissue dies.</td>
           <td>Antidote for catecholamine extravasation (dopamine, epi, norepi)</td>
           <td>Hypotension, tachycardia, cardiac arrhythmias</td>
           <td>N/A (IS the antidote)</td>
@@ -1839,6 +1859,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Phenytoin (Dilantin)</strong></td>
           <td>Blocks voltage-gated sodium channels → stabilizes neuronal membranes → prevents seizure firing</td>
+          <td class="drug-layman">Calms overactive electrical signals in the brain that cause seizures — like a circuit breaker stopping a short circuit from spreading.</td>
           <td>Seizure prophylaxis, certain arrhythmias</td>
           <td>Nystagmus, ataxia, gingival hyperplasia, hypotension if infused fast, QT prolongation</td>
           <td>No specific antidote</td>
@@ -1847,6 +1868,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <tr>
           <td><strong>Diphenhydramine (Benadryl)</strong></td>
           <td>H1 receptor antagonist → blocks histamine-mediated flushing and pruritus</td>
+          <td class="drug-layman">Blocks histamine — the chemical behind allergic reactions. Also causes drowsiness, and helps treat mild allergic responses and Red Man Syndrome.</td>
           <td>Red Man Syndrome premedication, allergic reactions</td>
           <td>Sedation, dry mouth, urinary retention, confusion (especially elderly)</td>
           <td>No specific antidote</td>
