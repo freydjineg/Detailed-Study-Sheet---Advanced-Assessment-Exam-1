@@ -852,7 +852,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
     <div class="explain">
       <span class="big">🩺</span>Heart sounds are caused by <strong>valve closure</strong>, not valve opening. Think about it like a door slamming — opening is silent, slamming shut makes the sound.
     </div>
-    <div class="grid2">
+    <div class="grid2" style="align-items:start">
       <div>
         <h3>Normal Heart Sounds</h3>
         <ul class="keylist">
@@ -861,10 +861,20 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
           <li><div class="dot"></div><strong>S1 = S2 at Erb's point</strong> (3rd ICS LSB)</li>
         </ul>
         <h3 style="margin-top:14px">Abnormal Heart Sounds</h3>
-        <ul class="keylist">
-          <li><div class="dot"></div><strong>S3 ("Ken-tuck-Y")</strong> = Early diastole, right after S2. Ventricles filling rapidly with too much volume. In adults >40 = PATHOLOGICAL → Heart failure. S1-S2-S3 sounds like "Kentucky."</li>
-          <li><div class="dot"></div><strong>S4 ("Ten-nes-SEE")</strong> = Late diastole, just before S1. Atria squeezing against a stiff, non-compliant ventricle. ALWAYS pathological → hypertrophy, HTN, CAD. S4-S1-S2 sounds like "Tennessee."</li>
-        </ul>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+          <div style="padding:10px 12px;border-radius:8px;background:#fef3f3;border-left:3px solid #c0392b">
+            <strong>S3 ("Ken-tuck-Y")</strong> — Early diastole, right after S2.<br>
+            Ventricles filling rapidly with too much volume.<br>
+            Adults &gt;40 = PATHOLOGICAL → <strong>Heart failure</strong><br>
+            <span style="font-size:.85em;color:var(--muted)">S1-S2-S3 sounds like "Kentucky"</span>
+          </div>
+          <div style="padding:10px 12px;border-radius:8px;background:#fef3f3;border-left:3px solid #c0392b">
+            <strong>S4 ("Ten-nes-SEE")</strong> — Late diastole, just before S1.<br>
+            Atria squeezing against a stiff, non-compliant ventricle.<br>
+            <strong>ALWAYS pathological</strong> → hypertrophy, HTN, CAD<br>
+            <span style="font-size:.85em;color:var(--muted)">S4-S1-S2 sounds like "Tennessee"</span>
+          </div>
+        </div>
       </div>
       <div>
         <h3>Auscultation Landmarks</h3>
@@ -880,7 +890,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
         <ul class="keylist">
           <li><div class="dot"></div>Caused by turbulent blood flow through a valve</li>
           <li><div class="dot"></div><strong>Stenosis</strong> = Valve opening is too narrow → turbulence going THROUGH the valve</li>
-          <li><div class="dot"></div"><strong>Regurgitation/Insufficiency</strong> = Valve cannot close properly → turbulence BACKFLOWING</li>
+          <li><div class="dot"></div><strong>Regurgitation/Insufficiency</strong> = Valve cannot close properly → turbulence BACKFLOWING</li>
           <li><div class="dot"></div>Systolic murmur at 2nd ICS RSB + symptoms → Aortic stenosis until proven otherwise</li>
           <li><div class="dot"></div>Murmurs graded I–VI (I = barely audible, VI = heard without stethoscope)</li>
         </ul>
